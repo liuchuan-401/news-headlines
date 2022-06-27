@@ -8,9 +8,9 @@
 
 <script>
 export default {
-
+  name: 'App'
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 </style>
