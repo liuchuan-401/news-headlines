@@ -7,6 +7,7 @@ import '@/styles/icon.less'
 import 'vant/lib/index.css'
 
 import router from '@/routers/index.js'
+import store from '@/store/index.js'
 import 'amfe-flexible'
 
 // 从Vant组件库中引出组件
@@ -28,5 +29,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
