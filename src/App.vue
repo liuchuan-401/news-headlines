@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <h1>黑马头条</h1>
     <!-- 一级路由--内容显示 -->
-    <rout-view></rout-view>
+    <router-view></router-view>
   </div>
 </template>
 
