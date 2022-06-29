@@ -5,8 +5,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 // 引入组件
-import Login from '@/pages/login/index.vue'
 import H from '@/pages/h1/index.vue'
+import Layout from '@/pages/layout/index.vue'
+import Login from '@/pages/login/index.vue'
+import Main from '@/pages/main/index.vue'
+import Question from '@/pages/question/index.vue'
+import Viode from '@/pages/viode/index.vue'
+import My from '@/pages/my/index.vue'
 
 // 配置路由规则
 const routes = [
@@ -14,6 +19,34 @@ const routes = [
   {
     path: '/',
     component: H
+  },
+
+  // 框架页面
+  {
+    path: '/layout',
+    component: Layout,
+    children: [
+      // 主页面
+      {
+        path: '',
+        component: Main
+      },
+      // 问答页面
+      {
+        path: '/question',
+        component: Question
+      },
+      // 视频页面
+      {
+        path: '/viode',
+        component: Viode
+      },
+      // 我的页面
+      {
+        path: '/my',
+        component: My
+      }
+    ]
   },
 
   //登录页面

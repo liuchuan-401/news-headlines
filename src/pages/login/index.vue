@@ -129,7 +129,7 @@ export default {
         const res = await loginAPI(values)
         console.log('登录成功', res);
         this.$store.commit('setUser', res.data.data)
-        // console.log('state',this.$store.state);
+        console.log('state',this.$store.state);
         this.$toast.success('登录成功')
       } catch (error) {
         console.log('登录失败', error);

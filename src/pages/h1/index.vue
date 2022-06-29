@@ -21,7 +21,7 @@
       class="btn"
       round
       size="large"
-      to="/login"
+      to="/layout"
     >立即体验</van-button>
 
   </div>
