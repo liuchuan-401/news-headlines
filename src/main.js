@@ -11,7 +11,7 @@ import store from '@/store/index.js'
 import 'amfe-flexible'
 
 // 从Vant组件库中引出组件
-import { Button, NavBar, Form, Field, CellGroup, Icon, Toast, CountDown, Search, Tab, Tabs, Tabbar, TabbarItem } from 'vant';
+import { Dialog, Cell, Grid, GridItem, Button, NavBar, Form, Field, CellGroup, Icon, Toast, CountDown, Search, Tab, Tabs, Tabbar, TabbarItem, Image as VanImage } from 'vant';
 
 // 将vant注册为全局组件
 Vue.use(Vant)
@@ -28,6 +28,11 @@ Vue.use(Tab)
 Vue.use(Tabs)
 Vue.use(Tabbar)
 Vue.use(TabbarItem)
+Vue.use(VanImage)
+Vue.use(Grid)
+Vue.use(GridItem)
+Vue.use(Cell)
+Vue.use(Dialog)
 
 
 Vue.config.productionTip = false

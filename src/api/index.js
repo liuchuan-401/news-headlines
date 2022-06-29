@@ -1,9 +1,11 @@
 // 统一导入、导出请求
 
+// 登录页面
 import { login, verify } from '@/api/login.js'
-import { channel } from '@/api/main.js'
+// 我的页面
+import { uerInfo } from '@/api/my.js'
 
 export const loginAPI = login
 export const verifyAPI = verify
 
-export const channelAPI = channel
+export const uerInfoAPI = uerInfo

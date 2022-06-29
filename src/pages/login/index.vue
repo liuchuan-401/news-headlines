@@ -2,8 +2,11 @@
   <div class="login-container">
     <!-- 标题区域 -->
     <van-nav-bar
+      left-arrow
+      left-text="返回"
       title="登录"
       id="title"
+      @click-left="onClickLeft"
     />
 
     <!-- 表单区域 -->
@@ -127,14 +130,17 @@ export default {
       // 发起请求
       try {
         const res = await loginAPI(values)
-        console.log('登录成功', res);
         this.$store.commit('setUser', res.data.data)
-        console.log('state',this.$store.state);
         this.$toast.success('登录成功')
+        this.$router.back()
       } catch (error) {
-        console.log('登录失败', error);
         this.$toast.fail('登录失败，手机号或者验证码错误')
       }
+    },
+
+    // 标题左箭头返回
+    onClickLeft () {
+      this.$router.back()
     }
   }
 }
@@ -153,6 +159,12 @@ export default {
 }
 
 // 标题样式
+/deep/ .van-icon-arrow-left {
+  color: #fff;
+}
+/deep/ .van-nav-bar__text {
+  color: #fff;
+}
 /deep/ .van-nav-bar__content {
   width: 100%;
   height: 48px;

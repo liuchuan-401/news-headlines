@@ -5,28 +5,28 @@
 
     <!-- 底部定位栏 -->
     <van-tabbar route>
-      <van-tabbar-item to='/'>
+      <van-tabbar-item to='/layout/main'>
         <i
           slot="icon"
           class="toutiao toutiao-shouye"
         ></i>
         <span>首页</span>
       </van-tabbar-item>
-      <van-tabbar-item to='/question'>
+      <van-tabbar-item to='/layout/question'>
         <i
           slot="icon"
           class="toutiao toutiao-wenda"
         ></i>
         <span>问答</span>
       </van-tabbar-item>
-      <van-tabbar-item to='/viode'>
+      <van-tabbar-item to='/layout/viode'>
         <i
           slot="icon"
           class="toutiao toutiao-shipin"
         ></i>
         <span>视频</span>
       </van-tabbar-item>
-      <van-tabbar-item to='/my'>
+      <van-tabbar-item to='/layout/my'>
         <i
           slot="icon"
           class="toutiao toutiao-wode"

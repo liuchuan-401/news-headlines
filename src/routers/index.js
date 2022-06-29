@@ -24,26 +24,27 @@ const routes = [
   // 框架页面
   {
     path: '/layout',
+    redirect: '/layout/main',
     component: Layout,
     children: [
       // 主页面
       {
-        path: '',
+        path: '/layout/main',
         component: Main
       },
       // 问答页面
       {
-        path: '/question',
+        path: '/layout/question',
         component: Question
       },
       // 视频页面
       {
-        path: '/viode',
+        path: '/layout/viode',
         component: Viode
       },
       // 我的页面
       {
-        path: '/my',
+        path: '/layout/my',
         component: My
       }
     ]
