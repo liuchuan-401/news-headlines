@@ -12,6 +12,7 @@ import Main from '@/pages/main/index.vue'
 import Question from '@/pages/question/index.vue'
 import Viode from '@/pages/viode/index.vue'
 import My from '@/pages/my/index.vue'
+import Chats from '@/pages/chats/index.vue'
 
 // 配置路由规则
 const routes = [
@@ -19,6 +20,12 @@ const routes = [
   {
     path: '/',
     component: H
+  },
+
+  //登录页面
+  {
+    path: '/login',
+    component: Login
   },
 
   // 框架页面
@@ -50,10 +57,10 @@ const routes = [
     ]
   },
 
-  //登录页面
+  // 聊天机器人页面
   {
-    path: '/login',
-    component: Login
+    path: '/chats',
+    component: Chats
   }
 ]
 

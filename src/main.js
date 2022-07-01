@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vant from 'vant'
 import App from './App.vue'
+import moment from 'moment'
+import VueMoment from 'vue-moment'
 
 import '@/styles/theme.less'
 import '@/styles/icon.less'
@@ -9,9 +11,10 @@ import 'vant/lib/index.css'
 import router from '@/routers/index.js'
 import store from '@/store/index.js'
 import 'amfe-flexible'
+import 'moment/locale/zh-cn'
 
 // 从Vant组件库中引出组件
-import { Dialog, Cell, Grid, GridItem, Button, NavBar, Form, Field, CellGroup, Icon, Toast, CountDown, Search, Tab, Tabs, Tabbar, TabbarItem, Image as VanImage } from 'vant';
+import { Popup, List, Dialog, Cell, Grid, GridItem, Button, NavBar, Form, Field, CellGroup, Icon, Toast, CountDown, Search, Tab, Tabs, Tabbar, TabbarItem, Image as VanImage } from 'vant';
 
 // 将vant注册为全局组件
 Vue.use(Vant)
@@ -33,7 +36,10 @@ Vue.use(Grid)
 Vue.use(GridItem)
 Vue.use(Cell)
 Vue.use(Dialog)
+Vue.use(List)
+Vue.use(Popup)
 
+Vue.use(VueMoment, { moment })
 
 Vue.config.productionTip = false
 

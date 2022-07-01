@@ -95,6 +95,7 @@
         is-link
       />
       <van-cell
+        to="/chats"
         title="小智同学"
         class="cell-item"
         is-link
@@ -148,11 +149,10 @@ export default {
     ...mapState(['user'])
   },
   async created () {
+    // 获取用户信息
     const userInof = await uerInfoAPI()
     this.userInof = userInof.data.data
-    console.log(this.userInof);
   }
-
 }
 </script>
 
