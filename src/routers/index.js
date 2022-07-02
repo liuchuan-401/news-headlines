@@ -13,6 +13,8 @@ import Question from '@/pages/question/index.vue'
 import Viode from '@/pages/viode/index.vue'
 import My from '@/pages/my/index.vue'
 import Chats from '@/pages/chats/index.vue'
+import Sreach from '@/pages/search/index.vue'
+import Edit from '@/pages/edit/index.vue'
 
 // 配置路由规则
 const routes = [
@@ -61,6 +63,18 @@ const routes = [
   {
     path: '/chats',
     component: Chats
+  },
+
+  //搜索页面
+  {
+    path: '/sreach',
+    component: Sreach
+  },
+
+  //编辑页面
+  {
+    path: '/edit',
+    component: Edit,
   }
 ]
 

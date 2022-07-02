@@ -17,3 +17,10 @@ export const getChannlesList = (channel_id, timestamp) => {
     }
   })
 }
+
+export const getRedChannelsList = () => {
+  return request({
+    method: "GET",
+    url: "/channels"
+  })
+}

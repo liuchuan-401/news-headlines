@@ -6,6 +6,7 @@
         slot="title"
         round
         type="info"
+        to="/sreach"
         class="search-btn"
       >
         <van-icon
@@ -44,7 +45,7 @@
       class="popup"
     >
       <!-- 我的频道 -->
-      <div>
+      <div class="my-channel">
         <van-cell-group class="popup-cell-group">
           <van-cell
             title="我的频道"
@@ -66,9 +67,31 @@
           class="popup-grid"
         >
           <van-grid-item
-            v-for="value in 8"
-            :key="value"
-            text="文字"
+            v-for="(obj,index) in mychannels"
+            :key="index"
+            :text="obj.name"
+            class="popup-grid-item"
+          />
+        </van-grid>
+      </div>
+
+      <!-- 频道推荐 -->
+      <div class="recommend-channel">
+        <van-cell-group class="popup-cell-group">
+          <van-cell
+            title="频道推荐"
+            class="popup-cell"
+          />
+        </van-cell-group>
+
+        <van-grid
+          :gutter="10"
+          class="popup-grid"
+        >
+          <van-grid-item
+            v-for="(obj,index) in redChannel"
+            :key="index"
+            :text="obj.name"
             class="popup-grid-item"
           />
         </van-grid>
@@ -80,7 +103,7 @@
 
 <script>
 // 引入请求文件
-import { getChannlesAPI } from '@/api/index.js'
+import { getChannlesAPI, getRedChannelsListAPI } from '@/api/index.js'
 // 引入组件
 import ArticleList from '@/components/article-list.vue'
 
@@ -90,6 +113,7 @@ export default {
       active: 0,
       showPopup: false,
       mychannels: [],
+      redChannel: [],
     }
   },
   components: {
@@ -99,10 +123,17 @@ export default {
     try {
       // 获取频道列表
       const res = await getChannlesAPI()
+      const res1 = await getRedChannelsListAPI()
+      const allChannels = res1.data.data.channels
       this.mychannels = res.data.data.channels
+      const mychannels = this.mychannels
+      this.redChannel = _.differenceWith(allChannels, mychannels, _.isEqual)
     } catch (err) {
       this.$toast('获取频道列表失败')
     }
+  },
+  watch: {
+
   }
 }
 </script>
@@ -169,5 +200,43 @@ export default {
   background-color: #ffffff;
   border: 1px solid #efefef;
   opacity: 0.9;
+}
+
+//遮罩层
+.my-channel {
+  margin-top: 43px;
+}
+.van-hairline--top-bottom::after {
+  border: none;
+}
+.popup-cell {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #333333;
+  .popup-btn {
+    width: 50px;
+    height: 24px;
+    border-color: #f85a5a;
+    .van-button__content {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 50px;
+      height: 24px;
+      font-size: 12px;
+      color: #f85a5a;
+    }
+  }
+}
+.popup-grid {
+  /deep/.van-grid-item__content {
+    width: 80px;
+    height: 43px;
+    background-color: #f4f5f6;
+    border-radius: 3px;
+  }
+  .color {
+    color: #f85a5a;
+  }
 }
 </style>

@@ -24,6 +24,7 @@
             round
             type="info"
             class="login-info-btn"
+            to="/edit"
           >编辑资料</van-button>
         </div>
         <!-- 头条、关注、粉丝、获赞 -->
